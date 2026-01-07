@@ -1,0 +1,337 @@
+/* ========================================
+   MY HAPPY LITTLE SCHOOL - Animations
+   ======================================== */
+
+/* ===== Keyframe Animations ===== */
+
+/* Float animation for shapes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in down */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Rotate */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gradient shift for backgrounds */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ===== Applied Animations ===== */
+
+/* Hero shapes floating */
+.hero__shapes .shape--1 {
+    animation: float 8s ease-in-out infinite;
+}
+
+.hero__shapes .shape--2 {
+    animation: float 10s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.hero__shapes .shape--3 {
+    animation: float 7s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+/* Logo bounce on hover */
+.nav__logo:hover .nav__logo-img {
+    animation: bounce 0.6s ease;
+}
+
+/* Button pulse on hover */
+.btn--primary:hover {
+    animation: pulse 1s ease infinite;
+}
+
+/* Card hover animations */
+.method__card,
+.course-card,
+.event,
+.testimonial-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.4s ease;
+}
+
+/* Social links bounce */
+.social-link:hover {
+    animation: bounce 0.5s ease;
+}
+
+/* Value icons wiggle */
+.value:hover .value__icon {
+    animation: shake 0.5s ease;
+}
+
+/* Activity tags */
+.activity {
+    transition: all 0.3s ease;
+}
+
+.activity:hover {
+    transform: scale(1.05);
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+
+/* ===== Smooth Transitions ===== */
+
+/* Links underline animation */
+.nav__link::after {
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card reveal on scroll (works with AOS) */
+[data-aos="fade-up"] {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Loading Animation ===== */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading__spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--color-gray-light);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+/* ===== Scroll Indicator ===== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s ease infinite;
+}
+
+.scroll-indicator__mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid var(--color-primary);
+    border-radius: 13px;
+    position: relative;
+}
+
+.scroll-indicator__wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeInDown 1.5s ease infinite;
+}
+
+/* ===== Testimonials Slider Animation ===== */
+.testimonials__track {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card {
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ===== Hero Text Animation ===== */
+.hero__title-highlight {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s linear infinite;
+}
+
+/* ===== Hover Effects ===== */
+
+/* Image zoom on hover */
+.about__image-wrapper,
+.hero__image-wrapper {
+    overflow: hidden;
+}
+
+.about__img,
+.hero__img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about__image-wrapper:hover .about__img,
+.hero__image-wrapper:hover .hero__img {
+    transform: scale(1.05);
+}
+
+/* Footer links underline */
+.footer__list a {
+    position: relative;
+}
+
+.footer__list a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+
+.footer__list a:hover::after {
+    width: 100%;
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero__shapes .shape {
+        animation: none;
+    }
+}
