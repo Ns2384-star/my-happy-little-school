@@ -13,6 +13,11 @@
     --color-logo-blue: #00AEEF;      /* Bleu ciel (logo) */
     --color-logo-heart: #E74C3C;     /* Rouge coeur (logo) */
 
+    /* Pastel Colors */
+    --color-pastel-pink: #FFF0F5;    /* Rose pâle */
+    --color-pastel-blue: #F0F8FF;    /* Bleu pâle */
+    --color-pastel-mint: #F0FFF4;    /* Vert menthe pâle */
+
     /* Neutrals */
     --color-white: #FFFFFF;
     --color-black: #000000;
@@ -20,9 +25,9 @@
     --color-gray: #808080;
     --color-gray-dark: #333333;
 
-    /* Typography */
-    --font-heading: 'Syne', sans-serif;
-    --font-body: 'Questrial', sans-serif;
+    /* Typography - Police plus douce */
+    --font-heading: 'Nunito', sans-serif;
+    --font-body: 'Quicksand', sans-serif;
 
     /* Font Sizes */
     --fs-hero: clamp(2.5rem, 5vw, 4rem);
@@ -84,6 +89,97 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== Bulles animées en arrière-plan ===== */
+.bubbles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: float 20s ease-in-out infinite;
+}
+
+.bubble--1 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--color-pastel-pink), transparent);
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.bubble--2 {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, var(--color-pastel-blue), transparent);
+    top: 60%;
+    right: 10%;
+    animation-delay: -5s;
+}
+
+.bubble--3 {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--color-secondary), transparent);
+    top: 30%;
+    right: 20%;
+    animation-delay: -10s;
+    opacity: 0.3;
+}
+
+.bubble--4 {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, var(--color-pastel-mint), transparent);
+    bottom: 20%;
+    left: 15%;
+    animation-delay: -7s;
+}
+
+.bubble--5 {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, var(--color-accent), transparent);
+    top: 70%;
+    left: 60%;
+    animation-delay: -12s;
+    opacity: 0.25;
+}
+
+.bubble--6 {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, var(--color-tertiary), transparent);
+    top: 15%;
+    right: 30%;
+    animation-delay: -3s;
+    opacity: 0.3;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    25% {
+        transform: translateY(-30px) translateX(20px) scale(1.05);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-15px) scale(0.95);
+    }
+    75% {
+        transform: translateY(-40px) translateX(10px) scale(1.02);
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -128,6 +224,18 @@ button {
 
 .section--alt {
     background-color: var(--color-gray-light);
+}
+
+.section--pastel-pink {
+    background: var(--color-pastel-pink);
+}
+
+.section--pastel-blue {
+    background: var(--color-pastel-blue);
+}
+
+.section--pastel-mint {
+    background: var(--color-pastel-mint);
 }
 
 .section__header {
@@ -210,6 +318,12 @@ button {
 
 .btn--full {
     width: 100%;
+}
+
+.btn--small {
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-small);
+    margin-top: 0.5rem;
 }
 
 /* ===== Header ===== */
@@ -338,6 +452,8 @@ button {
 .hero__title {
     font-size: var(--fs-hero);
     margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+    overflow: visible;
 }
 
 .hero__title-highlight {
@@ -357,6 +473,62 @@ button {
     color: var(--color-secondary);
     font-size: 1.25rem;
     margin-bottom: var(--spacing-lg);
+}
+
+/* Hero Badges (3 preuves) */
+.hero__badges {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-size: var(--fs-small);
+    font-weight: 600;
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast);
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+}
+
+.badge--native {
+    background: linear-gradient(135deg, var(--color-pastel-blue), var(--color-white));
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.badge--native::before {
+    content: '🇬🇧';
+}
+
+.badge--age {
+    background: linear-gradient(135deg, var(--color-pastel-pink), var(--color-white));
+    border: 2px solid var(--color-secondary);
+    color: var(--color-gray-dark);
+}
+
+.badge--age::before {
+    content: '👶';
+}
+
+.badge--rating {
+    background: linear-gradient(135deg, var(--color-accent), #fff8dc);
+    border: 2px solid var(--color-accent);
+    color: var(--color-gray-dark);
+}
+
+.badge--rating::before {
+    content: '⭐';
 }
 
 .hero__buttons {

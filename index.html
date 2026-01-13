@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My Happy Little School - Cours d'anglais ludiques pour enfants de 6 mois à 12 ans à Bois-Colombes. Pédagogie britannique, enseignantes natives. Yes you can!">
+    <meta name="description" content="My Happy Little School - Cours d'anglais ludiques pour enfants de 6 mois à 12 ans à Bois-Colombes, Versailles et Paris. Enseignantes 100% natives. Yes you can!">
     <meta name="keywords" content="cours anglais enfants, anglais bébé, école anglais Bois-Colombes, pédagogie britannique, cours anglais maternelle, stages anglais vacances">
     <meta name="author" content="My Happy Little School - Alexia Backhouse">
 
     <!-- Open Graph -->
     <meta property="og:title" content="My Happy Little School | Cours d'anglais enfants">
-    <meta property="og:description" content="Cours d'anglais ludiques pour enfants de 6 mois à 12 ans. Pédagogie britannique, enseignantes 100% natives.">
+    <meta property="og:description" content="Cours d'anglais ludiques pour enfants de 6 mois à 12 ans. Enseignantes 100% natives.">
     <meta property="og:image" content="assets/images/logo.jpg">
     <meta property="og:url" content="https://www.my-happy-little-school.com">
     <meta property="og:type" content="website">
 
     <title>My Happy Little School | Cours d'anglais enfants | Bois-Colombes</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Police plus douce -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -33,6 +33,16 @@
     <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
 </head>
 <body>
+    <!-- Bulles animées en arrière-plan -->
+    <div class="bubbles-container">
+        <div class="bubble bubble--1"></div>
+        <div class="bubble bubble--2"></div>
+        <div class="bubble bubble--3"></div>
+        <div class="bubble bubble--4"></div>
+        <div class="bubble bubble--5"></div>
+        <div class="bubble bubble--6"></div>
+    </div>
+
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
@@ -46,7 +56,10 @@
                         <a href="#home" class="nav__link">Accueil</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link">À propos</a>
+                        <a href="#presse" class="nav__link">Presse</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Notre histoire</a>
                     </li>
                     <li class="nav__item">
                         <a href="#method" class="nav__link">Méthode</a>
@@ -66,12 +79,6 @@
                         </ul>
                     </li>
                     <li class="nav__item">
-                        <a href="#presse" class="nav__link">Presse</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#valeurs" class="nav__link">Valeurs</a>
-                    </li>
-                    <li class="nav__item">
                         <a href="#booking" class="nav__link nav__link--cta">Réserver</a>
                     </li>
                 </ul>
@@ -88,7 +95,7 @@
     </header>
 
     <main class="main">
-        <!-- Hero Section -->
+        <!-- 1. HERO Section + 3 preuves -->
         <section class="hero" id="home">
             <div class="hero__container container">
                 <div class="hero__content" data-aos="fade-up">
@@ -97,12 +104,19 @@
                         <span class="hero__title-highlight">Yes you can!</span>
                         <br>L'anglais devient un jeu d'enfant
                     </h1>
+
+                    <!-- 3 Badges preuves -->
+                    <div class="hero__badges">
+                        <span class="badge badge--native">100% Natives</span>
+                        <span class="badge badge--age">6 mois - 12 ans</span>
+                        <span class="badge badge--rating">5/5 Google</span>
+                    </div>
+
                     <p class="hero__quote-main">
-                        <strong>"Children do not care how much you know, until they know how much you care"</strong>
+                        <em>"Children do not care how much you know, until they know how much you care"</em>
                     </p>
                     <p class="hero__description">
-                        Cours d'anglais ludiques pour enfants de <strong>6 mois à 12 ans</strong> à Bois-Colombes, Versailles et Paris.
-                        <br>Pédagogie britannique, enseignantes 100% natives.
+                        Cours d'anglais ludiques pour enfants à <strong>Bois-Colombes, Versailles et Paris</strong>.
                     </p>
                     <div class="hero__buttons">
                         <a href="#booking" class="btn btn--primary">Réserver un cours d'essai</a>
@@ -122,21 +136,50 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="about section" id="about">
+        <!-- 2. PRESSE Section (valorisant, juste après Hero) -->
+        <section class="press section section--pastel-pink" id="presse">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">Ils parlent de nous</span>
+                    <h2 class="section__title">Presse & Médias</h2>
+                </div>
+
+                <div class="press__grid" data-aos="fade-up">
+                    <div class="press-card">
+                        <div class="press-card__logo">📺</div>
+                        <h3 class="press-card__title">Sqool TV</h3>
+                        <p class="press-card__text">Interview complète d'Alexia sur la pédagogie britannique et l'apprentissage de l'anglais dès le plus jeune âge.</p>
+                        <a href="https://www.youtube.com/watch?v=e4wWE6J3Fv8" target="_blank" rel="noopener" class="btn btn--outline">Voir l'interview</a>
+                    </div>
+                    <div class="press-card">
+                        <div class="press-card__logo">👶</div>
+                        <h3 class="press-card__title">Magic Maman</h3>
+                        <p class="press-card__text">"L'anglais avant les premiers pas" — Article complet sur notre méthode.</p>
+                        <a href="https://www.magicmaman.com/my-happy-little-school-l-anglais-avant-les-premiers-pas,3777752.asp" target="_blank" rel="noopener" class="btn btn--outline">Lire l'article</a>
+                        <a href="https://www.instagram.com/reel/DTIor5MiKqJ/" target="_blank" rel="noopener" class="btn btn--outline btn--small">Voir sur Instagram</a>
+                    </div>
+                    <div class="press-card press-card--highlight">
+                        <div class="press-card__logo">🏛️</div>
+                        <h3 class="press-card__title">Assemblée Nationale</h3>
+                        <p class="press-card__text">Alexia participe régulièrement à des tables rondes à l'Assemblée nationale sur les enjeux liés à l'enfance.</p>
+                        <p class="press-card__note">Prochaine intervention : 16 janvier — Table ronde sur l'autorité à l'école.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. NOTRE HISTOIRE Section (Alexia - version courte) -->
+        <section class="about section section--pastel-blue" id="about">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
                     <span class="section__subtitle">Notre histoire</span>
-                    <h2 class="section__title">Rencontrez Alexia Backhouse</h2>
+                    <h2 class="section__title">Rencontrez Alexia</h2>
                 </div>
 
                 <div class="about__content">
                     <div class="about__image" data-aos="fade-right">
                         <div class="about__image-wrapper">
-                            <picture>
-                                <source srcset="assets/images/alexia.avif" type="image/avif">
-                                <img src="assets/images/alexia.avif" alt="Alexia Backhouse - Fondatrice" class="about__img">
-                            </picture>
+                            <img src="assets/images/alexia.jpg" alt="Alexia Backhouse - Fondatrice" class="about__img">
                         </div>
                     </div>
 
@@ -144,27 +187,18 @@
                         <h3 class="about__name">Alexia Backhouse</h3>
                         <p class="about__role">Fondatrice, Directrice & Conférencière</p>
 
-                        <blockquote class="about__quote">
-                            "Les enfants ont besoin de quelqu'un qui les aime avant de quelqu'un qui sait."
-                        </blockquote>
-
-                        <p class="about__description">
-                            Franco-britannique, j'ai eu la chance de grandir à <strong>Londres jusqu'à mes 12 ans</strong>.
-                            J'y ai vécu l'apprentissage à l'anglaise : le fameux <em>"Yes you can!"</em>,
-                            cette bienveillance qui pousse chaque enfant à croire en lui.
-                        </p>
-
-                        <p class="about__description">
-                            Mon arrivée en France a été un choc culturel. Mais comme je dis toujours :
-                            <strong>"Every cloud has a silver lining"</strong> — chaque nuage a un contour argenté.
-                            Cette expérience m'a donné envie de transmettre cette confiance en soi aux enfants français.
-                        </p>
-
-                        <p class="about__description">
-                            Aujourd'hui, <strong>My Happy Little School</strong> est né de cette passion :
-                            donner aux enfants les clés de l'anglais dans un environnement chaleureux,
-                            où ils sont <strong>heureux avant tout</strong>.
-                        </p>
+                        <div class="about__story">
+                            <p class="about__description">
+                                <strong>Franco-britannique</strong>, Alexia a grandi à Londres.
+                            </p>
+                            <p class="about__description">
+                                Elle y a découvert une école où l'on apprend avec <strong>confiance, encouragement et joie</strong>.
+                            </p>
+                            <p class="about__description about__description--highlight">
+                                <strong>My Happy Little School</strong> est née de cette idée simple :
+                                <em>un enfant progresse mieux quand il se sent aimé, capable, et fier de ce qu'il fait.</em>
+                            </p>
+                        </div>
 
                         <div class="about__values">
                             <div class="value">
@@ -185,8 +219,8 @@
             </div>
         </section>
 
-        <!-- Method Section -->
-        <section class="method section section--alt" id="method">
+        <!-- 4. MÉTHODE Section (3 piliers courts) -->
+        <section class="method section" id="method">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
                     <span class="section__subtitle">Notre approche</span>
@@ -202,7 +236,7 @@
                         <h3 class="method__title">100% Natives</h3>
                         <p class="method__text">
                             Toutes nos enseignantes sont natives d'Angleterre, d'Irlande, des États-Unis ou du Canada.
-                            Les enfants entendent les vrais sons britanniques dès le départ.
+                            Les enfants entendent les vrais sons anglo-saxons dès le départ.
                         </p>
                     </div>
 
@@ -261,8 +295,8 @@
             </div>
         </section>
 
-        <!-- Courses Section -->
-        <section class="courses section" id="courses">
+        <!-- 5. COURS Section -->
+        <section class="courses section section--pastel-pink" id="courses">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
                     <span class="section__subtitle">Nos programmes</span>
@@ -384,8 +418,8 @@
             </div>
         </section>
 
-        <!-- Holiday Camps Section -->
-        <section class="camps section section--alt" id="camps">
+        <!-- 6. STAGES Section -->
+        <section class="camps section" id="camps">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
                     <span class="section__subtitle">Pendant les vacances</span>
@@ -435,8 +469,8 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section class="testimonials section" id="testimonials">
+        <!-- 7. TÉMOIGNAGES Section -->
+        <section class="testimonials section section--pastel-blue" id="testimonials">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
                     <span class="section__subtitle">Ils nous font confiance</span>
@@ -515,8 +549,8 @@
             </div>
         </section>
 
-        <!-- Community Section -->
-        <section class="community section section--alt" id="community">
+        <!-- 8. COMMUNAUTÉ Section -->
+        <section class="community section" id="community">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
                     <span class="section__subtitle">Plus qu'une école</span>
@@ -567,7 +601,35 @@
             </div>
         </section>
 
-        <!-- Solutions Périscolaires Section -->
+        <!-- 9. VALEURS Section -->
+        <section class="values section section--pastel-pink" id="valeurs">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">Ce qui nous guide</span>
+                    <h2 class="section__title">Nos Valeurs</h2>
+                </div>
+
+                <div class="values__grid" data-aos="fade-up">
+                    <div class="value-card">
+                        <div class="value-card__number">1</div>
+                        <h3 class="value-card__title">YES WE CAN !</h3>
+                        <p class="value-card__text">Développer la confiance en soi de votre enfant, qu'il peut y arriver !</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__number">2</div>
+                        <h3 class="value-card__title">COMMUNICATION</h3>
+                        <p class="value-card__text">Travailler en équipe entre l'école et votre famille, pour le meilleur de votre enfant.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__number">3</div>
+                        <h3 class="value-card__title">MUTUAL RESPECT</h3>
+                        <p class="value-card__text">Respecter votre enfant, ses émotions, son rythme et sa personnalité. Respecter votre famille et s'attendre à être respecté en retour.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. SOLUTIONS PRO (Périscolaire, Crèches, Formations) -->
         <section class="services section" id="periscolaire">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
@@ -598,8 +660,8 @@
             </div>
         </section>
 
-        <!-- Offre Crèches Section -->
-        <section class="services section section--alt" id="creches">
+        <!-- Crèches Section -->
+        <section class="services section section--pastel-blue" id="creches">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
                     <span class="section__subtitle">Pour les tout-petits</span>
@@ -659,67 +721,8 @@
             </div>
         </section>
 
-        <!-- Presse Section -->
-        <section class="press section section--alt" id="presse">
-            <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__subtitle">On parle de nous</span>
-                    <h2 class="section__title">Presse & Médias</h2>
-                </div>
-
-                <div class="press__grid" data-aos="fade-up">
-                    <div class="press-card">
-                        <div class="press-card__logo">📺</div>
-                        <h3 class="press-card__title">Sqool TV</h3>
-                        <p class="press-card__text">Interview complète d'Alexia sur la pédagogie britannique et l'apprentissage de l'anglais dès le plus jeune âge.</p>
-                        <a href="https://www.youtube.com/watch?v=e4wWE6J3Fv8" target="_blank" rel="noopener" class="btn btn--outline">Voir l'interview</a>
-                    </div>
-                    <div class="press-card">
-                        <div class="press-card__logo">👶</div>
-                        <h3 class="press-card__title">Magic Maman</h3>
-                        <p class="press-card__text">Découvrez My Happy Little School en vidéo sur Instagram.</p>
-                        <a href="https://www.instagram.com/reel/DTIor5MiKqJ/" target="_blank" rel="noopener" class="btn btn--outline">Voir sur Instagram</a>
-                    </div>
-                    <div class="press-card">
-                        <div class="press-card__logo">🏛️</div>
-                        <h3 class="press-card__title">Assemblée Nationale</h3>
-                        <p class="press-card__text">Alexia participe régulièrement à des tables rondes à l'Assemblée nationale sur les enjeux liés à l'enfance.</p>
-                        <p class="press-card__note">Prochaine intervention : 16 janvier — Table ronde sur l'autorité à l'école.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Values Section -->
-        <section class="values section" id="valeurs">
-            <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__subtitle">Ce qui nous guide</span>
-                    <h2 class="section__title">Nos Valeurs</h2>
-                </div>
-
-                <div class="values__grid" data-aos="fade-up">
-                    <div class="value-card">
-                        <div class="value-card__number">1</div>
-                        <h3 class="value-card__title">YES WE CAN !</h3>
-                        <p class="value-card__text">Développer la confiance en soi de votre enfant, qu'il peut y arriver !</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-card__number">2</div>
-                        <h3 class="value-card__title">COMMUNICATION</h3>
-                        <p class="value-card__text">Travailler en équipe entre l'école et votre famille, pour le meilleur de votre enfant.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-card__number">3</div>
-                        <h3 class="value-card__title">MUTUAL RESPECT</h3>
-                        <p class="value-card__text">Respecter votre enfant, ses émotions, son rythme et sa personnalité. Respecter votre famille et s'attendre à être respecté en retour.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Booking Section -->
-        <section class="booking section" id="booking">
+        <!-- 11. RÉSERVATION Section -->
+        <section class="booking section section--pastel-pink" id="booking">
             <div class="container">
                 <div class="section__header" data-aos="fade-up">
                     <span class="section__subtitle">Prêt à commencer ?</span>
@@ -764,7 +767,6 @@
                     </div>
 
                     <div class="booking__calendly">
-                        <!-- Calendly inline widget - À remplacer avec votre lien Calendly -->
                         <div class="calendly-placeholder">
                             <div class="calendly-placeholder__content">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
@@ -775,11 +777,6 @@
                                 </a>
                             </div>
                         </div>
-                        <!--
-                        Quand vous aurez Calendly, remplacez le placeholder ci-dessus par :
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/VOTRE-LIEN" style="min-width:320px;height:630px;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                        -->
                     </div>
                 </div>
             </div>
@@ -799,13 +796,11 @@
                 <div class="footer__links">
                     <h4 class="footer__title">Navigation</h4>
                     <ul class="footer__list">
-                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#presse">Presse</a></li>
+                        <li><a href="#about">Notre histoire</a></li>
                         <li><a href="#method">Méthode</a></li>
                         <li><a href="#courses">Cours</a></li>
                         <li><a href="#camps">Stages</a></li>
-                        <li><a href="#periscolaire">Périscolaire</a></li>
-                        <li><a href="#formations">Formations</a></li>
-                        <li><a href="#presse">Presse</a></li>
                         <li><a href="#valeurs">Valeurs</a></li>
                         <li><a href="#booking">Réserver</a></li>
                     </ul>
@@ -841,7 +836,7 @@
 
             <div class="footer__bottom">
                 <p class="footer__copyright">
-                    &copy; 2024 My Happy Little School - By Backhouse SASU. Tous droits réservés.
+                    &copy; 2026 My Happy Little School - By Backhouse SASU. Tous droits réservés.
                 </p>
                 <p class="footer__legal">
                     <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a>
