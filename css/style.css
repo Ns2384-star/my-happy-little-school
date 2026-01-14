@@ -1794,6 +1794,28 @@ button {
     font-weight: 600;
 }
 
+.press-card__logo-img {
+    width: 120px;
+    height: auto;
+    max-height: 80px;
+    margin: 0 auto var(--spacing-sm);
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.press__grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.footer__phone a {
+    color: var(--color-secondary);
+    transition: color var(--transition-fast);
+}
+
+.footer__phone a:hover {
+    color: var(--color-peach);
+}
+
 /* ===== Values Section ===== */
 .values__grid {
     display: grid;
@@ -1857,4 +1879,87 @@ button {
 
 .value-card:nth-child(3) .value-card__number {
     background: linear-gradient(135deg, var(--color-sunshine) 0%, #FFB347 100%);
+}
+
+/* ===== Contact Form ===== */
+.contact-form {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+}
+
+.contact-form h4 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.form__group {
+    margin-bottom: var(--spacing-sm);
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    color: var(--color-text);
+    border: 2px solid var(--color-lavender);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    transition: all var(--transition-fast);
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(107, 91, 149, 0.1);
+}
+
+.form__textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form__success {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.form__success-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--color-mint-deep) 0%, var(--color-accent) 100%);
+    color: var(--color-white);
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-md);
+}
+
+.form__success p {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    color: var(--color-primary);
+}
+
+/* Calendly Widget Styling */
+.calendly-inline-widget {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
 }

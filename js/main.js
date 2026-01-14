@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initTestimonialsSlider();
     initSmoothScroll();
     initAOS();
+    initContactForm();
 });
 
 /* ===== Navigation ===== */
@@ -370,6 +371,57 @@ function initLazyLoading() {
 
         lazyImages.forEach(img => imageObserver.observe(img));
     }
+}
+
+/* ===== Contact Form (Web3Forms) ===== */
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        // Show loading state
+        submitBtn.textContent = 'Envoi en cours...';
+        submitBtn.disabled = true;
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                // Hide form and show success message
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+
+                // Reset form for potential future use
+                form.reset();
+
+                // After 5 seconds, show form again
+                setTimeout(() => {
+                    form.style.display = 'block';
+                    successMessage.style.display = 'none';
+                }, 5000);
+            } else {
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            }
+        } catch (error) {
+            alert('Une erreur est survenue. Veuillez réessayer.');
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
 }
 
 /* ===== Console Easter Egg ===== */
