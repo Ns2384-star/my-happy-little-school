@@ -1,0 +1,565 @@
+/* ========================================
+   MY HAPPY LITTLE SCHOOL - Whimsical Animations
+   Soft, dreamy, and playful motion design
+   ======================================== */
+
+/* ===== Custom Easing Functions ===== */
+:root {
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-in-out-soft: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* ===== Keyframe Animations ===== */
+
+/* Gentle floating animation */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+    75% {
+        transform: translateY(-4px) rotate(-1deg);
+    }
+}
+
+/* Soft pulse animation */
+@keyframes softPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.03);
+        opacity: 0.95;
+    }
+}
+
+/* Wiggle animation for icons */
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Fade in with slide up */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in with slide down */
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale in with bounce */
+@keyframes scaleInBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Gradient shimmer */
+@keyframes gradientShimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Blob morphing */
+@keyframes blobMorph {
+    0%, 100% {
+        border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    }
+    25% {
+        border-radius: 50% 60% 40% 50% / 60% 50% 50% 40%;
+    }
+    50% {
+        border-radius: 40% 50% 60% 50% / 50% 40% 60% 50%;
+    }
+    75% {
+        border-radius: 55% 45% 45% 55% / 45% 55% 45% 55%;
+    }
+}
+
+/* Rotate gently */
+@keyframes gentleRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Bounce in */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Wave animation for text */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(107, 91, 149, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(107, 91, 149, 0.4);
+    }
+}
+
+/* ===== Applied Animations ===== */
+
+/* Hero shapes floating */
+.hero__shapes .shape--1 {
+    animation: gentleFloat 10s var(--ease-in-out-soft) infinite;
+}
+
+.hero__shapes .shape--2 {
+    animation: gentleFloat 12s var(--ease-in-out-soft) infinite;
+    animation-delay: -3s;
+}
+
+.hero__shapes .shape--3 {
+    animation: gentleFloat 8s var(--ease-in-out-soft) infinite;
+    animation-delay: -6s;
+}
+
+/* Logo interactions */
+.nav__logo:hover .nav__logo-img {
+    animation: wiggle 0.5s var(--ease-bounce);
+}
+
+/* Button hover effects */
+.btn--primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn--primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn--primary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Card hover animations */
+.method__card,
+.course-card,
+.event,
+.testimonial-card,
+.press-card,
+.service-card,
+.value-card {
+    transition: transform 0.4s var(--ease-out-back),
+                box-shadow 0.4s var(--ease-smooth);
+}
+
+/* Icon bounce on card hover */
+.method__card:hover .method__icon,
+.service-card:hover .service-card__icon,
+.press-card:hover .press-card__logo,
+.event:hover .event__icon {
+    animation: wiggle 0.6s var(--ease-bounce);
+}
+
+/* Social links */
+.social-link {
+    transition: transform 0.3s var(--ease-out-back),
+                box-shadow 0.3s var(--ease-smooth);
+}
+
+.social-link:hover {
+    animation: softPulse 1s var(--ease-smooth) infinite;
+}
+
+/* Value tags wiggle */
+.value:hover .value__icon {
+    animation: wiggle 0.5s var(--ease-bounce);
+}
+
+/* Activity tags */
+.activity {
+    transition: all 0.3s var(--ease-out-back);
+}
+
+.activity:hover {
+    animation: scaleInBounce 0.4s var(--ease-bounce);
+}
+
+/* ===== Smooth Transitions ===== */
+
+/* Links underline animation */
+.nav__link::after {
+    transition: width 0.4s var(--ease-out-back),
+                background-position 0.4s var(--ease-smooth);
+}
+
+/* Card reveal enhancements (works with AOS) */
+[data-aos] {
+    transition-timing-function: var(--ease-out-back) !important;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(40px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+/* ===== Hero Text Animation ===== */
+.hero__title-highlight {
+    background-size: 300% auto;
+    animation: gradientShimmer 4s linear infinite;
+}
+
+/* ===== Loading Animation ===== */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--color-lavender) 0%, var(--color-cream) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s var(--ease-smooth), visibility 0.6s;
+}
+
+.loading.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading__spinner {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.loading__spinner::before,
+.loading__spinner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 4px solid transparent;
+}
+
+.loading__spinner::before {
+    border-top-color: var(--color-primary);
+    animation: gentleRotate 1.2s linear infinite;
+}
+
+.loading__spinner::after {
+    border-bottom-color: var(--color-secondary);
+    animation: gentleRotate 1.2s linear infinite reverse;
+    animation-delay: -0.3s;
+}
+
+/* ===== Scroll Indicator ===== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: gentleFloat 2.5s var(--ease-in-out-soft) infinite;
+}
+
+.scroll-indicator__mouse {
+    width: 28px;
+    height: 44px;
+    border: 2px solid var(--color-primary);
+    border-radius: 14px;
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+}
+
+.scroll-indicator__wheel {
+    width: 4px;
+    height: 10px;
+    background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeSlideDown 1.8s var(--ease-smooth) infinite;
+}
+
+/* ===== Testimonials Slider Animation ===== */
+.testimonials__track {
+    transition: transform 0.6s var(--ease-out-back);
+}
+
+.testimonial-card {
+    opacity: 1;
+    transition: opacity 0.4s var(--ease-smooth),
+                transform 0.4s var(--ease-out-back);
+}
+
+/* ===== Image Hover Effects ===== */
+.about__image-wrapper,
+.hero__image-wrapper {
+    overflow: hidden;
+}
+
+.about__img,
+.hero__img {
+    transition: transform 0.6s var(--ease-smooth);
+}
+
+.about__image-wrapper:hover .about__img,
+.hero__image-wrapper:hover .hero__img {
+    transform: scale(1.08);
+}
+
+/* ===== Badge Hover ===== */
+.badge {
+    transition: all 0.4s var(--ease-out-back);
+}
+
+.badge:hover {
+    animation: softPulse 0.8s var(--ease-smooth);
+}
+
+/* ===== Footer Links ===== */
+.footer__list a {
+    position: relative;
+    transition: all 0.3s var(--ease-smooth);
+}
+
+.footer__list a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-peach));
+    transition: width 0.4s var(--ease-out-back);
+}
+
+.footer__list a:hover::after {
+    width: 100%;
+}
+
+/* ===== Navigation dropdown ===== */
+.nav__dropdown {
+    transform-origin: top center;
+}
+
+.nav__item--dropdown:hover .nav__dropdown {
+    animation: fadeSlideDown 0.3s var(--ease-out-back);
+}
+
+/* ===== Course Card Headers ===== */
+.course-card__header {
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card__header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: gradientShimmer 8s linear infinite;
+}
+
+/* ===== Staggered animations for grids ===== */
+.method__grid .method__card,
+.courses__grid .course-card,
+.services__grid .service-card,
+.press__grid .press-card,
+.values__grid .value-card,
+.community__events .event {
+    opacity: 0;
+    animation: fadeSlideUp 0.6s var(--ease-out-back) forwards;
+}
+
+.method__grid .method__card:nth-child(1) { animation-delay: 0.1s; }
+.method__grid .method__card:nth-child(2) { animation-delay: 0.2s; }
+.method__grid .method__card:nth-child(3) { animation-delay: 0.3s; }
+.method__grid .method__card:nth-child(4) { animation-delay: 0.4s; }
+.method__grid .method__card:nth-child(5) { animation-delay: 0.5s; }
+.method__grid .method__card:nth-child(6) { animation-delay: 0.6s; }
+
+.courses__grid .course-card:nth-child(1) { animation-delay: 0.1s; }
+.courses__grid .course-card:nth-child(2) { animation-delay: 0.15s; }
+.courses__grid .course-card:nth-child(3) { animation-delay: 0.2s; }
+.courses__grid .course-card:nth-child(4) { animation-delay: 0.25s; }
+.courses__grid .course-card:nth-child(5) { animation-delay: 0.3s; }
+
+.community__events .event:nth-child(1) { animation-delay: 0.1s; }
+.community__events .event:nth-child(2) { animation-delay: 0.15s; }
+.community__events .event:nth-child(3) { animation-delay: 0.2s; }
+.community__events .event:nth-child(4) { animation-delay: 0.25s; }
+
+/* ===== Glow effect for featured elements ===== */
+.course-card--featured {
+    animation: glowPulse 3s var(--ease-smooth) infinite;
+}
+
+/* ===== Typing cursor for quotes ===== */
+.hero__quote-main::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+    color: var(--color-lavender-deep);
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ===== Parallax-like effect on scroll ===== */
+@media (prefers-reduced-motion: no-preference) {
+    .hero__image-wrapper {
+        transition: transform 0.1s linear;
+    }
+
+    .hero__shapes .shape {
+        will-change: transform;
+    }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero__shapes .shape,
+    .bubble {
+        animation: none !important;
+    }
+
+    .hero__title-highlight {
+        animation: none !important;
+        background-position: 0 center !important;
+    }
+
+    .method__grid .method__card,
+    .courses__grid .course-card,
+    .services__grid .service-card,
+    .press__grid .press-card,
+    .values__grid .value-card,
+    .community__events .event {
+        opacity: 1 !important;
+        animation: none !important;
+    }
+}
+
+/* ===== Focus States for Accessibility ===== */
+.btn:focus-visible,
+.nav__link:focus-visible,
+.social-link:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
